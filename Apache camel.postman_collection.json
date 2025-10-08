@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "8ae7361b-d328-4091-90bd-e58fe24748fe",
+		"name": "Apache camel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30541411"
+	},
+	"item": [
+		{
+			"name": "users-xml",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<contacts>\r\n    <contact>\r\n        <name>Georgia Ullrich</name>\r\n        <email>RandomEmail1@example.com</email>\r\n    </contact>\r\n    <contact>\r\n        <name>RandomFullName2</name>\r\n        <email>RandomEmail2@example.com</email>\r\n    </contact>\r\n    <contact>\r\n        <name>RandomFullName3</name>\r\n        <email>RandomEmail3@example.com</email>\r\n    </contact>\r\n</contacts>\r\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/camel/users-xml",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"camel",
+						"users-xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postman-echo-request",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"contacts\": [\r\n\t\t{\r\n\t\t\t\"name\": \"{{$randomFullName}}\",\r\n\t\t\t\"email\": \"{{$randomEmail}}\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"name\": \"{{$randomFullName}}\",\r\n\t\t\t\"email\": \"{{$randomEmail}}\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"name\": \"{{$randomFullName}}\",\r\n\t\t\t\"email\": \"{{$randomEmail}}\"\r\n\t\t}\r\n\t\t]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://postman-echo.com/post",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users-json",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"contacts\": [\r\n\t\t{\r\n\t\t\t\"name\": \"{{$randomFullName}}\",\r\n\t\t\t\"email\": \"{{$randomEmail}}\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"name\": \"{{$randomFullName}}\",\r\n\t\t\t\"email\": \"{{$randomEmail}}\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"name\": \"{{$randomFullName}}\",\r\n\t\t\t\"email\": \"{{$randomEmail}}\"\r\n\t\t}\r\n\t\t]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/camel/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"camel",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "beeceptor-request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Charset",
+						"value": "utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n                  xmlns:ord=\"http://example.com/order\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <ord:GetOrderInfoRequest>\r\n      <ord:OrderId>ORD-2025-10-07</ord:OrderId>\r\n      <ord:RequestDate>2025-10-08</ord:RequestDate>\r\n      <ord:Requester>\r\n        <ord:UserId>NUMA001</ord:UserId>\r\n        <ord:System>Postman</ord:System>\r\n      </ord:Requester>\r\n    </ord:GetOrderInfoRequest>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>\r\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://user-soap.free.beeceptor.com/json",
+					"protocol": "https",
+					"host": [
+						"user-soap",
+						"free",
+						"beeceptor",
+						"com"
+					],
+					"path": [
+						"json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

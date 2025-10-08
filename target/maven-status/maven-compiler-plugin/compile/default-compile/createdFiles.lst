@@ -1,0 +1,5 @@
+com\lespinel\camel\demojdbc\Application.class
+com\lespinel\camel\demojdbc\models\Contacts.class
+com\lespinel\camel\demojdbc\routes\MyRouteBuilder.class
+com\lespinel\camel\demojdbc\models\Contact.class
+com\lespinel\camel\demojdbc\models\User.class
